@@ -24,6 +24,8 @@ variable "sg_name" {}
 
 variable "ingress_rules" {}
 
+variable "egress_rules" {}
+
 
 variable "bucket_name" {
   default = "backend-terraform-ldaniav2new2" # el nombre del bucket a crear

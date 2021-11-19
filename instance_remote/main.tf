@@ -51,3 +51,22 @@ resource "aws_security_group" "ssh_conection" {
   
 
 }
+
+
+resource "aws_instance" "platzi-instance"{
+    #ami = "ami-06fddf8d55d5ab5df"
+    ami = var.ami_id
+    instance_type = var.instance_type
+    tags = var.tags
+    security_groups = ["${aws_security_group.ssh_conection.name}"]
+    connection {
+      type     = "ssh"
+      user     = "centos"
+      private_key = "~/.ssh/AMI_KEY.pem"
+    }
+    provisioner "remote-exec" {
+      inline = [
+        "docker run -it -p 3000:3000 cssluism/youtube_app_v2:v1"
+      ]
+    }
+}

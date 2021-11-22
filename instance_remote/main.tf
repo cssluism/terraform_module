@@ -97,10 +97,11 @@ resource "aws_instance" "platzi-instance"{
       type     = "ssh"
       user     = "centos"
       private_key = "~/.ssh/AMI_KEY.pem"
+      host = self.public_ip
     }
     provisioner "remote-exec" {
       inline = [
-        "docker run -it -p 3000:3000 cssluism/youtube_app_v2:v1"
+        "docker run -it -d -p 3000:3000 cssluism/youtube_app_v2:v1"
       ]
     }
 }

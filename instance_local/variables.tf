@@ -28,7 +28,7 @@ variable "egress_rules" {}
 
 
 variable "bucket_name" {
-  default = "backend-terraform-ldaniav2new3" # el nombre del bucket a crear
+  default = "backend-terraform-ldaniav2new4" # el nombre del bucket a crear
 }
 
 variable "acl" {

@@ -19,10 +19,26 @@ variable "name_prefix" {
  */
 
 
-variable "tags" {}
+#variable "tags" {}
 variable "sg_name" {}
 
 variable "ingress_rules" {}
+
+variable "egress_rules" {}
+
+
+variable "bucket_name" {
+  default = "backend-terraform-ldaniav2new3" # el nombre del bucket a crear
+}
+
+variable "acl" {
+  default = "private"
+}
+
+variable "tags" {
+    default = {Environment = "Dev", CreatedBy = "terraform"}
+}
+
 
 
 

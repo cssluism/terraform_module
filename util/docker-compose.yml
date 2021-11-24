@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  app:
+    ##build: .
+    image: cssluism/youtube_app_v2:v1
+    environment:
+      MONGO_URL: "mongodb://db:27017/test"
+    depends_on:
+      - db
+    ports:
+      #- "3000-3005:3000"Rango
+      - "3000:3000"
+    volumes: 
+      - .:/usr/src
+      - /usr/src/node_modules
+    command: npx nodemon index.js
+
+  db:
+    image: mongo

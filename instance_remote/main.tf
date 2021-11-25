@@ -66,7 +66,7 @@ resource "aws_security_group" "ssh_conection" {
 }
 
 ## Crear instancia
-resource "aws_instance" "platzi-instance"{
+resource "aws_instance" "terraform-instance"{
     #ami = "ami-06fddf8d55d5ab5df"
     ami = var.ami_id
     instance_type = var.instance_type

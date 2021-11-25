@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket = "terraformbackendnew" # nombre del bucket que ya tengas creado, aqui es donde se guardará el archivo de estado
+    bucket = "backend-terraform-ldaniav2new" # nombre del bucket que ya tengas creado, aqui es donde se guardará el archivo de estado
     key    = "dev"
     region = "us-west-2"
 

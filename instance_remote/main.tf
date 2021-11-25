@@ -18,7 +18,7 @@ resource "aws_kms_key" "mykey" {
   deletion_window_in_days = 10
 }
 ## Creacion de  s3 para guardar State
-resource "aws_s3_bucket" "terraform_backend" {
+resource "aws_s3_bucket" "terraform_backendv2" {
   bucket = var.bucket_name
   acl    = var.acl
   tags   = var.tags
